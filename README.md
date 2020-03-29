@@ -107,7 +107,7 @@ You can download a Shapefile of belgian communes under the title "Municipalities
 
 Now we want to predict the number of cases/100k inhab. but using the color. There are three colors: (r)ed, (g)reen and (b)lue.
 
- * First we can use the Identify Features tool to retrieve the RGB values from the legend for the `100`, `200`, `300` and `400` values. We alse assume that `0` is white (`255,255,255`). Here is the result:
+ * First we can use the Identify Features tool to retrieve the RGB values from the legend for the `100`, `200`, `300` and `400` values. We also assume that `0` is white (`255,255,255`). Here is the result:
 
 | val | r   | g   | b   |
 |-----|-----|-----|-----|
@@ -116,6 +116,8 @@ Now we want to predict the number of cases/100k inhab. but using the color. Ther
 | 200 | 139 | 206 | 137 |
 | 300 | 76  | 174 | 96  |
 | 400 | 31  | 130 | 66  |
+
+![Identify features](img-readme/160-identify-features-color.png)
 
  * Our sampling method is not very accurate. If we plot the three colors in function of the value, we can see that the three are "mostly" linear:
 
