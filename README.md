@@ -43,7 +43,7 @@ You can download a Shapefile of belgian communes under the title "Municipalities
 
  * Create a new project in QGIS
  * Import the Shapefile with the communes: drag and drop "communes_L72.shp" to the map canvas, or add it via Layers > Add Layer > Add Vector Layer `Ctrl+Shift+V`.
- * Right-click on the `communes_L72`, go to Properties and set the coordinate reference system (CRS) to `EPSG:31370 * Belge 1972 / Belgian Lambert 72`:
+ * Right-click on the `communes_L72`, go to Properties and set the coordinate reference system (CRS) to `EPSG:31370 - Belge 1972 / Belgian Lambert 72`:
 
 ![Set CRS](img-readme/40-set-crs.png)
 
@@ -115,3 +115,5 @@ Now we want to predict the number of cases/100k inhab. but using the color. Ther
  * Our sampling method is not very accurate. If we plot the three colors in function of the value, we can see that the three are "mostly" linear:
 
 ![Colors in function of value plot](img-readme/170-rgb-plot.svg)
+
+ * Then we will apply a linear regression to compute the coefficients that approximate our small sample. The code is available in [this Jupyter notebook](fit-colors.ipynb).
