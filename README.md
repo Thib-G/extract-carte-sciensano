@@ -95,7 +95,7 @@ You can download a Shapefile of belgian communes under the title "Municipalities
 
 * In the new layer, go to Properties, enable editing mode by clicking on the pencil and rename fields `rvalue_1`, `rvalue_2`, `rvalue_3` and `rvalue_4` to `r`, `g`, `b` and `a`.
 
-![Rename fields](img-readme/120-sample-raster-at-points.png)
+![Rename fields](img-readme/130-layer-properties.png)
 
  * We can also set the points' color to the same color as the raster by using a data-driver property for the marker's color:
 
