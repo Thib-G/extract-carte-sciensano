@@ -17,10 +17,12 @@ In the PDF file, a map by commune is available in a quite low resolution.
 
 ![PDF screenshot with map](img-readme/20-screenshot-pdf.png)
 
-We would like to extract the number of confirmed cases from this map. How? Here is the to-do list:
+We would like to extract the number of confirmed cases from this map.
+
+How? Here is the to-do list:
 
  * Extract the map as image
- * Georeference the map using a vector layer with all belgian communes as polygons
+ * Georeference the map by superposing a vector layer with all belgian communes as polygons
  * Compute a point inside the surface of each commune and sample the color at this point
  * Compute the value of confirmed cases from the sampled color
 
