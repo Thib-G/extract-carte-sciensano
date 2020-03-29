@@ -7,7 +7,7 @@ THIS TUTORIAL HAS NO SCIENTIFIC VALUE. PLEASE USE IT ONLY FOR EDUCATIONAL PURPOS
 
 [Sciensano](https://www.sciensano.be) has been in the eye of the cyclone lately in the context of the Covid-19 crisis.
 
-Why? because they only publish(ed) a PDF file with the epidemiological information in Belgium. This PDF file contains some choropleth cartograms with the incidence (confirmed cases by 100k inhabitants) by commune.
+Why? because they only publish(ed) a PDF file with the epidemiological information in Belgium for the Covid-19 epidemic. This PDF file contains some choropleth cartograms with the incidence (confirmed cases by 100k inhabitants) by commune.
 
 The map is included in Word file which is itself [printed as PDF](https://epidemio.wiv-isp.be/ID/Documents/Covid19/Derni%c3%a8re%20mise%20%c3%a0%20jour%20de%20la%20situation%20%c3%a9pid%c3%a9miologique.pdf), according to the metadata.
 
