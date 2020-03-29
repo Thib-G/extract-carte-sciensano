@@ -1,5 +1,8 @@
 # Extract data from a raster choropleth map
 
+## DISCLAIMER
+THIS TUTORIAL HAS NO SCIENTIFIC VALUE. PLEASE USE IT ONLY FOR EDUCATIONAL PURPOSES.
+
 ## Introduction
 
 [Sciensano](https://www.sciensano.be) has been in the eye of the cyclone lately in the context of the Covid-19 crisis.
@@ -116,4 +119,65 @@ Now we want to predict the number of cases/100k inhab. but using the color. Ther
 
 ![Colors in function of value plot](img-readme/170-rgb-plot.svg)
 
- * Then we will apply a linear regression to compute the coefficients that approximate our small sample. The code is available in [this Jupyter notebook](fit-colors.ipynb).
+ * Then we apply a linear regression to compute the coefficients that approximate our small sample. The code is available in [this Jupyter notebook](fit-colors.ipynb).
+
+```
+import pandas as pd
+import numpy as np
+from sklearn.linear_model import LinearRegression
+
+df = pd.read_csv('vals-by-color.csv')
+df.index = df['val']
+
+X = df[['r', 'g', 'b']]
+y = df['val']
+reg = LinearRegression().fit(X, y)
+
+print(reg.coef_)
+# [-1.2252014  -0.94501941 -0.05407662]
+print(reg.intercept_)
+# 564.4736852449081
+```
+
+ * Now that we know our coefficients, we can create a custom function in QGIS to predict the number of cases/100k inhab. Right-click on the `point-on-surface-tutorial-sampled` layer and Open attribute table. Then click on Open Field Calculator:
+
+![Open Field Calculator](img-readme/175-open-field-calculator.png)
+
+ * Create a custom function with the following code, using the previously computed coefficients:
+
+```
+from qgis.core import *
+from qgis.gui import *
+import numpy as np
+
+@qgsfunction(args='auto', group='Custom')
+def predict_value(r, g, b, feature, parent):
+    """
+    Calculates the prediction of value provided rgb.
+    r, g, b are int
+    """
+    rgb = np.array([int(r), int(g), int(b)])
+    coef_ = np.array([-1.2252014,  -0.94501941, -0.05407662])
+    intercept_ = 564.4736852449081
+    return int((np.dot(rgb, coef_)  + intercept_))
+```
+
+![Custom function](img-readme/180-custom-function.png)
+
+ * Apply the custom function with the `r`, `g`, `b` fields from our layer:
+
+![Apply custom function](img-readme/190-use-custom-function.png)
+
+ * Hoorray! We now have a new field with our predicted value!
+
+![Predicted value](img-readme/200-incidence-predicted.png)
+
+ * The last step is to add a label to our layer `"Name" || ': ' || "predicted"`:
+
+![Add label](img-readme/210-label-predicted.png)
+
+![Show map with label](img-readme/220-map-with-predicted-incidence.png)
+
+That's all!
+
+
