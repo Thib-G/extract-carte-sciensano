@@ -97,7 +97,7 @@ You can download a Shapefile of belgian communes under the title "Municipalities
 
 ![Rename fields](img-readme/130-layer-properties.png)
 
- * We can also set the points' color to the same color as the raster by using a data-driven property for the marker's color:
+ * We can also set the points' color to the same color as the raster by using a data-defined property for the marker's color:
 
 ![Point symbology](img-readme/140-point-symbology.png)
 
