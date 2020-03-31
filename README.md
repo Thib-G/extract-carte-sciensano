@@ -3,6 +3,10 @@
 ## DISCLAIMER
 THIS TUTORIAL HAS NO SCIENTIFIC VALUE. PLEASE USE IT ONLY FOR EDUCATIONAL PURPOSES.
 
+## Attribution
+« QUOILIN, Sophie, LEROY Mathias, DUPONT Yves. Epistat, Covid19 ), Sciensano, Brussels, Belgium, https://epistat.wiv-isp.be/covid/. »
+Sciensano is not responsible for the conclusions drawn on the basis of these data. 
+
 ## Introduction
 
 [Sciensano](https://www.sciensano.be) has been in the eye of the cyclone lately in the context of the Covid-19 crisis.
